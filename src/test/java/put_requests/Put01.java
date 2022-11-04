@@ -40,22 +40,25 @@ public class Put01 extends JsonplaceholderBaseUrl {
     @Test
     public void put01() {
 
-        //1. Set The URL
-        spec.pathParams("first","todos","second",198);
+        //Set the Url
+        spec.pathParams("first", "todos","second",198);
 
-        // 2. Set The Expected Data ( put, post, patch)
-        JsonPlaceHolderTestData obj=new JsonPlaceHolderTestData();
-        Map<String,Object> expectedData=obj.expectedDataMethod(21,"Wash the dishes",false);
+        //Set the Expected Data
+        JsonPlaceHolderTestData obj = new JsonPlaceHolderTestData();
+        Map<String , Object> expectedData = obj.expectedDataMethod(21,"Wash the dishes",false);
+        System.out.println("expectedData = " + expectedData);
 
-
-        // 3. Send The Request And Get The Response
-        Response response=given().spec(spec).contentType(ContentType.JSON).body(expectedData).put("/{first}/{second}");
+        //Send the Request and Get the Response
+        Response response = given().spec(spec).contentType(ContentType.JSON).body(expectedData).when().put("/{first}/{second}");
         response.prettyPrint();
 
-        // 4. Do Assertion
-        Map<String,Object>actualData = response.as(HashMap.class);
+        //Do Assertion
+        Map<String , Object> actualData =  response.as(HashMap.class);
+        System.out.println("actualData = " + actualData);
+
         assertEquals(expectedData.get("completed"),actualData.get("completed"));
         assertEquals(expectedData.get("title"),actualData.get("title"));
         assertEquals(expectedData.get("userId"),actualData.get("userId"));
+
     }
 }

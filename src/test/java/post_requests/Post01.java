@@ -38,25 +38,23 @@ public class Post01 extends JsonplaceholderBaseUrl {
     @Test
     public void post1() {
 
-        // Set the url
-        spec.pathParam("1","todos");
+        //Set the Url
+        spec.pathParam("first","todos");
 
-        // Set the expected Data
-        JsonPlaceHolderTestData obj=new JsonPlaceHolderTestData();
-        Map<String,Object> expectedData=obj.expectedDataMethod(55,"Tidy your room",false);
+        //Set the expected Data
+        JsonPlaceHolderTestData obj = new JsonPlaceHolderTestData();
+        Map<String,Object> expectedData = obj.expectedDataMethod(55,"Tidy your room",false);
 
-        // Send the Request and Get the response
-       Response response=given().spec(spec).contentType(ContentType.JSON).body(expectedData).when().post("/{1}");
-       response.prettyPrint();
+        //Send the Request and Get the response
+        Response response = given().spec(spec).contentType(ContentType.JSON).body(expectedData).when().post("/{first}");
+        response.prettyPrint();
 
-        // Do Assertion
-        Map<String,Object>actualData= response.as(HashMap.class);
+        //Do Assertion
+        Map<String,Object> actualData = response.as(HashMap.class);
+
         assertEquals(expectedData.get("completed"),actualData.get("completed"));
         assertEquals(expectedData.get("title"),actualData.get("title"));
         assertEquals(expectedData.get("userId"),actualData.get("userId"));
-
-
-
 
 
 
