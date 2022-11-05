@@ -1,6 +1,6 @@
 package post_requests;
 
-import base_url.JsonplaceholderBaseUrl;
+import base_urls.JsonplaceholderBaseUrl;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -10,7 +10,6 @@ import test_data.JsonPlaceHolderTestData;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.*;

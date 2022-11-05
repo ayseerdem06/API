@@ -1,6 +1,6 @@
 package get_requests;
 
-import base_url.ReqresBaseUrl;
+import base_urls.ReqresBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
 

@@ -1,6 +1,6 @@
 package get_requests;
 
-import base_url.RestfulBaseUrl;
+import base_urls.RestfulBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
